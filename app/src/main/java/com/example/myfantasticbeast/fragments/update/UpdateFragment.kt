@@ -1,11 +1,10 @@
 package com.example.myfantasticbeast.fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -39,6 +38,7 @@ class UpdateFragment : Fragment() {
         view.update_btn.setOnClickListener{
             updateItem()
         }
+        setHasOptionsMenu(true)
 
 
         return view
@@ -67,4 +67,37 @@ class UpdateFragment : Fragment() {
     private fun inputCheck(location:String, taxonomy:String, characterstics:String): Boolean{
         return !TextUtils.isEmpty(location) && !TextUtils.isEmpty(taxonomy) && !TextUtils.isEmpty(characterstics)
 
-}}
+
+
+}
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete){
+            deleteanimal()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteanimal() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_,_->
+            animalviewmodel.deleteanimal(args.currentanimal)
+            Toast.makeText(requireContext(),"successfully removed: ${args.currentanimal.taxonomy}"
+                ,Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_updateFragment_to_list_fragment)
+
+
+
+        }
+        builder.setNegativeButton("No") {_, _->
+
+            builder.setTitle("delete ${args.currentanimal.taxonomy}?")
+            builder.setMessage("are you sure")
+            builder.create().show()
+        }
+        }
+    }

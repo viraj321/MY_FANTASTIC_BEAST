@@ -30,5 +30,18 @@ class animalviewmodel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun deleteanimal(animal: animal){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteanimal(animal)
+        }
+    }
+
+    fun deleteallanimals(animal: animal){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteallanimals()
+        }
+    }
+
+
 
 }

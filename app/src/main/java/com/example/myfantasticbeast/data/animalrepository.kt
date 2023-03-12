@@ -11,4 +11,12 @@ class animalrepository ( private val animaldao: animaldao){
     suspend fun updateanimal(animal: animal){
         animaldao.updateanimal(animal)
     }
+
+    suspend fun deleteanimal(animal: animal){
+        animaldao.deleteanimal(animal)
+    }
+
+    suspend fun deleteallanimals(){
+        animaldao.deleteallanimals()
+    }
 }
