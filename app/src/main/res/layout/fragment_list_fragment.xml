@@ -25,8 +25,9 @@
         android:layout_marginBottom="30dp"
         android:clickable="true"
         android:focusable="true"
-        android:tint="@color/black"
+        android:tint="@android:color/white"
         android:src="@drawable/ic_add"
+        android:contentDescription="add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

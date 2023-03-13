@@ -31,6 +31,9 @@ class list_fragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+
+
+
         animalviewmodel = ViewModelProvider(this).get(animalviewmodel::class.java)
         animalviewmodel.readAllData.observe(viewLifecycleOwner, Observer { animal ->
             adapter.setData(animal)
