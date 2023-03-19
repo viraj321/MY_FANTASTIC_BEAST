@@ -31,8 +31,8 @@ class UpdateFragment : Fragment() {
         animalviewmodel = ViewModelProvider(this).get(animalviewmodel::class.java)
 
 
-        view.updateLocation_et.setText(args.currentanimal.location)
-        view.updateTaxonomy_et.setText(args.currentanimal.taxonomy)
+       view.updateLocation_et.setText(args.currentanimal.location)
+       view.updateTaxonomy_et.setText(args.currentanimal.taxonomy)
         view.updateCharacterstic_et.setText(args.currentanimal.characterstic)
 
         view.update_btn.setOnClickListener{
@@ -50,7 +50,7 @@ class UpdateFragment : Fragment() {
         val characterstic = updateCharacterstic_et.text.toString()
 
         if (inputCheck(location, taxonomy, characterstic)){
-            val updatedanimal = animal(args.currentanimal.id, location, taxonomy, characterstic)
+           val updatedanimal = animal(args.currentanimal.id, location, taxonomy, characterstic)
 
             animalviewmodel.updateanimal(updatedanimal)
 

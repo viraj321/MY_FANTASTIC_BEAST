@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/bird2"
     tools:context=".SignInActivity">
+
     <EditText
         android:id="@+id/editText7"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="password"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,14 +26,15 @@
         android:id="@+id/editText8"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="124dp"
         android:layout_marginBottom="608dp"
         android:hint="e mail"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/login2"

@@ -29,7 +29,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
         holder.itemView.rowLayout.setOnClickListener{
             val action = list_fragmentDirections.actionListFragmentToUpdateFragment(currentItem)
-            holder.itemView.findNavController().navigate(action)
+           holder.itemView.findNavController().navigate(action)
 
 
         }
@@ -42,5 +42,8 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     fun setData(animal: List<animal>){
         this.animalList = animal
         notifyDataSetChanged()
+    }
+    interface  onClick{
+
     }
 }
