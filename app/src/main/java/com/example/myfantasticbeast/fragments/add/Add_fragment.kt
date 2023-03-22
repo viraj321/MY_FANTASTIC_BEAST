@@ -8,15 +8,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.myfantasticbeast.R
 import com.example.myfantasticbeast.data.animal
-import com.example.myfantasticbeast.data.animalviewmodel
+import com.example.myfantasticbeast.data.Animalviewmodel
+import com.example.myfantasticbeast.data.Animalviewmodelfactory
 import kotlinx.android.synthetic.main.fragment_add_fragment.*
 import kotlinx.android.synthetic.main.fragment_add_fragment.view.*
 
 class add_fragment : Fragment() {
-    private lateinit var manimalviewmodel: animalviewmodel
+    private lateinit var manimalviewmodel: Animalviewmodel
 
 
     override fun onCreateView(
@@ -25,7 +27,7 @@ class add_fragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_add_fragment, container, false)
-        manimalviewmodel = ViewModelProvider(this).get(animalviewmodel::class.java)
+        manimalviewmodel = ViewModelProviders.of(this,Animalviewmodelfactory(view.context)).get(Animalviewmodel::class.java)
 
         view.button2.setOnClickListener{
             insertDataToDatabase()

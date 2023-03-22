@@ -27,7 +27,7 @@ abstract class animaldatabase : RoomDatabase(){
                     "animal_database"
                 ).build()
                 INSTANCE = instance
-                return instance
+                return INSTANCE!!
 
             }
 

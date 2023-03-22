@@ -1,20 +1,22 @@
 package com.example.myfantasticbeast.data
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class animalviewmodel(application: Application): AndroidViewModel(application) {
+class Animalviewmodel(context: Context): ViewModel() {
 
     val readAllData: LiveData<List<animal>>
     private val repository: animalrepository
 
 
     init {
-        val animaldao = animaldatabase.getDatabase(application).animaldao()
+        val animaldao = animaldatabase.getDatabase(context).animaldao()
         repository = animalrepository(animaldao)
         readAllData = repository.readAllData
     }

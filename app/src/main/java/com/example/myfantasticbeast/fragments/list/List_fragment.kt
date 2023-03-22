@@ -7,22 +7,24 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfantasticbeast.R
 import com.example.myfantasticbeast.data.animal
-import com.example.myfantasticbeast.data.animalviewmodel
+import com.example.myfantasticbeast.data.Animalviewmodel
+import com.example.myfantasticbeast.data.Animalviewmodelfactory
 import kotlinx.android.synthetic.main.fragment_list_fragment.view.*
 
 class list_fragment : Fragment() {
-    private lateinit var animalviewmodel: animalviewmodel
+    private lateinit var animalviewmodel: Animalviewmodel
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_list_fragment, container, false)
 
         val adapter = ListAdapter()
@@ -34,7 +36,7 @@ class list_fragment : Fragment() {
 
 
 
-        animalviewmodel = ViewModelProvider(this).get(animalviewmodel::class.java)
+        animalviewmodel = ViewModelProviders.of(this,Animalviewmodelfactory(view.context)).get(Animalviewmodel::class.java)
         animalviewmodel.readAllData.observe(viewLifecycleOwner, Observer { animal ->
             adapter.setData(animal)
         })

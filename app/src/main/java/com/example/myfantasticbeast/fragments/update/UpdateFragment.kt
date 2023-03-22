@@ -11,13 +11,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.myfantasticbeast.R
 import com.example.myfantasticbeast.data.animal
-import com.example.myfantasticbeast.data.animalviewmodel
+import com.example.myfantasticbeast.data.Animalviewmodel
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 
 class UpdateFragment : Fragment() {
 
-    private lateinit var animalviewmodel: animalviewmodel
+    private lateinit var animalviewmodel: Animalviewmodel
 
     private val args by navArgs<UpdateFragmentArgs>()
 
