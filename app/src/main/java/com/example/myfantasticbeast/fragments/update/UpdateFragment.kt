@@ -7,11 +7,13 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.myfantasticbeast.R
 import com.example.myfantasticbeast.data.animal
 import com.example.myfantasticbeast.data.Animalviewmodel
+import com.example.myfantasticbeast.data.Animalviewmodelfactory
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 
@@ -28,7 +30,7 @@ class UpdateFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_update, container, false)
 
-        animalviewmodel = ViewModelProvider(this).get(animalviewmodel::class.java)
+        animalviewmodel = ViewModelProviders.of(this,Animalviewmodelfactory(view.context)).get(Animalviewmodel::class.java)
 
 
        view.updateLocation_et.setText(args.currentanimal.location)

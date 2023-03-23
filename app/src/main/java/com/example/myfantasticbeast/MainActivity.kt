@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 //    lateinit var animalviewmodel: Animalviewmodel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
+
+
         setContentView(R.layout.activity_main)
 //        animalviewmodel = ViewModelProviders.of(this,Animalviewmodelfactory(this)).get(Animalviewmodel::class.java)
 
