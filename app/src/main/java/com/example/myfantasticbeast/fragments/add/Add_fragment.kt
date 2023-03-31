@@ -42,6 +42,7 @@ class add_fragment : Fragment() {
         val taxonomy = addTaxonomy_et.text.toString()
         val characterstic = addCharacterstic_et.text.toString()
 
+
         if(inputCheck(location,taxonomy,characterstic)){
             val animal = animal(0,location, taxonomy, characterstic)
             manimalviewmodel.addanimal(animal)

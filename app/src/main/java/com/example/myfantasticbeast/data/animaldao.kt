@@ -7,6 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import java.util.concurrent.Flow
 
 @Dao
 interface animaldao {
@@ -25,4 +26,6 @@ interface animaldao {
 
     @Query("SELECT * FROM animal_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<animal>>
+
+
 }

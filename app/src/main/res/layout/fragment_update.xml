@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="characterstic"
+        android:hint="name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateCharacterstic_et"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -75,5 +75,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.034" />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="266dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#007C7C"
+        android:text="UPLOAD IMAGE"
+        android:textColor="#EDFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <ImageView
+        android:id="@+id/firebaseImageView"
+        android:layout_width="75dp"
+        android:layout_height="73dp"
+        android:src="@drawable/icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

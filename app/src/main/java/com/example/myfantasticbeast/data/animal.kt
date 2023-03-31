@@ -9,8 +9,12 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "animal_table")
  data class animal(
     @PrimaryKey(autoGenerate = true)
-     val id: Int,
+    val id: Int,
+
      val location: String,
      val taxonomy: String,
      val characterstic: String
+
+
+
  ): Parcelable
